@@ -5,6 +5,7 @@ WORKDIR /App
 COPY . ./
 # Restore as distinct layers
 RUN dotnet restore
+RUN dotnet test
 # Build and publish a release
 RUN dotnet publish -o out
 
