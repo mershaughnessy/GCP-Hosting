@@ -7,6 +7,13 @@ namespace GcpHosting.Controllers;
 [Route("api/pickle-rick")]
 public class PickleRickController : ControllerBase
 {
+    private readonly IConfiguration _configuration;
+
+    public PickleRickController(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
+    
     [HttpGet]
     public IActionResult Get()
     {
@@ -14,5 +21,16 @@ public class PickleRickController : ControllerBase
         {
             Name = "Pickle Rick"
         });
+    }
+
+    [HttpGet("ben")]
+    public IActionResult Ben()
+    {
+        if (_configuration["BEN"].ToLower() == "true")
+        {
+            return Ok("Ben");
+        }
+    
+        return BadRequest("Not Ben");
     }
 }
