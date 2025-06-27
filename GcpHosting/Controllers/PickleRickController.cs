@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GcpHosting.Controllers;
 
 [ApiController]
-[Route("api/pickle-rick")]
+[Route("pickle-rick")]
 public class PickleRickController : ControllerBase
 {
     private readonly IConfiguration _configuration;
