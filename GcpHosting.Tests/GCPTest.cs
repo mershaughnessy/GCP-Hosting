@@ -5,6 +5,6 @@ public class GCPTest
     [Fact]
     public void Fail()
     {
-        Assert.True(true);
+        Assert.True(false);
     }
 }
